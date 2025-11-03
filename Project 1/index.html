@@ -3,48 +3,227 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Needy</title>
-        <link rel="stylesheet" type="image/x-icon" href="C:\Users\lab_services_student\Downloads\Calm Teal and Gray Logo for 'Needy'.png">
-        <!--link rel = "stylesheet" href="styles.css"-->
+        <title>Needy | Fresh Groceries, Electronics & Home Essentials</title>
+        <meta name="keywords" content="groceries, online shopping, Needy, electronics, bakery, home essentials, affordable shopping, delivery">
+        <meta name="description" content="Shop online with Needy for fresh groceries, bakery goods, home furniture, and electronics — affordable and delivered to your door.">
+        <link rel="stylesheet" type="image/x-icon" href="/Project 1/images/logo.png">
+        <link rel="stylesheet" href="styles.css">
+
     </head>
     <body>
         <!--HEADER-->
         <header class="top-bar">
             <div class="Logo">
-                <img src="C:\Users\lab_services_student\Downloads\Calm Teal and Gray Logo for 'Needy'.png">
+                <img src="/Project 1/images/logo.png">
             </div>
 
-            <div class="search bar">
-                <input type="text" placeholder="Search Needy">
-                <button><i class="fa fa-search"></i></button>
+            <div class="search-container">
+              <input type="text" id="searchInput" placeholder="Search products...">
+            <div id="searchResults" class="results-container"></div>
             </div>
+         
             
             <div class="header icons">
                 <a href="#"><i class="fa fa-shopping-cart"></i></a>
                 <a href="#"><i class="fa fa-star"></i>Wishlist</a>
                 <button class="login-btn">Log In</button>
             </div>
+
+
+
         </header>
         <nav>
             <ul>
-                <li><a href="index.html" target="_blank">Home</a></li>
-                <li><a href="#" target="_blank">Electronics</a></li>
-                <li><a href="#" target="_blank">Applications</a></li>
-                <li><a href="#" target="_blank">Groceries</a></li>
-                <li><a href="#" target="_blank">Drinks</a></li>
-                <li><a href="#" target="_blank">Home & Furniture</a></li>
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="electronics.html" target="_blank">Electronics</a></li>
+        <li><a href="appliances.html" target="_blank">Appliances</a></li>
+        <li><a href="groceries.html" target="_blank">Groceries</a></li>
+        <li><a href="drinks.html" target="_blank">Drinks</a></li>
+        <li><a href="homeandfurniture.html" target="_blank">Home & Furniture</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
 
         <main>
-            <section>
-                <h2>About Us</h2>
-                <p>Welcome to Needy</p>
-            </section>
-        </main>
 
+<!-- Modal Trigger Button -->
+<button id="openModal" class="btn">Open Special Offer</button>
+
+<!-- The Modal -->
+<div id="promoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Special Offer!</h2>
+    <p>Get 20% off your first order on Needy. Use code <strong>WELCOME20</strong> at checkout!</p>
+    <button class="btn" id="closeModal">Shop Now</button>
+  </div>
+</div>
+            
+            <section class="tabs-section">
+  <h2>Shop by Category</h2>
+  <div class="tabs">
+    <script src="script.js" defer></script>
+    <button class="tab-button active" data-tab="tab1">Groceries</button>
+    <button class="tab-button" data-tab="tab2">Home & Furniture</button>
+    <button class="tab-button" data-tab="tab3">Electronics</button>
+    <button class="tab-button" data-tab="tab4">Drinks</button>
+    <button class="tab-button" data-tab="tab5">Appliances</button>
+    <button class="tab-button" data-tab="tab6">About Us</button>
+    <button class="tab-button" data-tab="tab7">Contact</button>
+    <button class="tab-button" data-tab="tab8">Cart</button>
+</div>
+
+  <div class="tab-content active" id="tab1">
+    <p>Find fresh groceries including fruits, vegetables, dairy, and more.</p>
+    <a href="fruitandvegetables.html" class="btn">Shop Groceries</a>
+  </div>
+
+  <div class="tab-content" id="tab2">
+    <p>Upgrade your home with our living room</p>
+    <a href="livingroom.html" class="btn">Explore Furniture</a>
+  </div>
+
+  <div class="tab-content" id="tab3">
+    <p>Shop the latest laptops here</p>
+    <a href="laptops.html" class="btn">Shop laptops</a>
+  </div>
+
+  <div class="tab-content" id="tab4">
+    <p>Get all the refreshing drinks right here</p>
+    <a href="softdrinks.html" class="btn">Browse Softdrinks</a>
+  </div>
+
+  <div class="tab-content" id="tab5">
+    <p>Wanna cool off with our latest fridge.</p>
+    <a href="fridge.html" class="btn">Browse Fridge</a>
+  </div>
+
+  <div class="tab-content" id="tab6">
+    <p>Curious about us and want to learn about us</p>
+    <a href="about.html" class="btn">Browse About Us</a>
+  </div>
+
+  <div class="tab-content" id="tab7">
+    <p>Are you need to contact us for our products</p>
+    <a href="contact.html" class="btn">Go to Contact</a>
+  </div>
+
+  <div class="tab-content" id="tab8">
+    <p>Are you ready to cash in your product</p>
+    <a href="cart.html" class="btn">Go to Cart</a>
+  </div>
+</section>
+        </main>
+<footer>
+  <p>Explore more in our <a href="electronics.html">Electronics Section</a> or <a href="groceries.html">Groceries Section</a>.</p>
+</footer>
         <footer>
             <p>&copy; Needy. All rights reserved.</p>
         </footer>
-    </body>
+
+    <script>
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and content
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Activate the clicked tab
+      button.classList.add('active');
+      const target = document.getElementById(button.dataset.tab);
+      target.classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  const modal = document.getElementById('promoModal');
+  const openBtn = document.getElementById('openModal');
+  const closeBtn = document.querySelector('.close');
+  const shopNowBtn = document.getElementById('closeModal');
+
+  // Open modal
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  // Close modal when clicking X or "Shop Now"
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  shopNowBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Close modal if user clicks outside the box
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+  
+</script>
+
+<script>
+const products = [
+  { name: "Apple MacBook", page: "laptops.html" },
+  { name: "Samsung TV", page: "televisions.html" },
+  { name: "Fresh Bread", page: "groceries.html" },
+  { name: "Organic Milk", page: "groceries.html" },
+  { name: "Lenovo Thinkpad", page: "laptops.html" }
+];
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  searchResults.innerHTML = "";
+
+  if (query) {
+    const filtered = products.filter(product =>
+      product.name.toLowerCase().includes(query)
+    );
+
+    if (filtered.length > 0) {
+      filtered.forEach(product => {
+        const div = document.createElement("div");
+        div.textContent = product.name;
+        div.addEventListener("click", () => {
+          window.location.href = product.page; // Redirect to relevant page
+        });
+        searchResults.appendChild(div);
+      });
+      searchResults.style.display = "block";
+    } else {
+      searchResults.innerHTML = "<div>No products found</div>";
+      searchResults.style.display = "block";
+    }
+  } else {
+    searchResults.style.display = "none";
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".search-container")) {
+    searchResults.style.display = "none";
+  }
+});
+
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter" && searchResults.firstChild) {
+    const first = searchResults.firstChild.textContent;
+    const product = products.find(p => p.name === first);
+    if (product) window.location.href = product.page;
+  }
+});
+
+</script>
+
+</body>
 </html>

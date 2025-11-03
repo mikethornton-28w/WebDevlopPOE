@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Needy - About Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>About Needy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="electronics.html" target="_blank">Electronics</a></li>
+        <li><a href="appliances.html" target="_blank">Appliances</a></li>
+        <li><a href="groceries.html" target="_blank">Groceries</a></li>
+        <li><a href="drinks.html" target="_blank">Drinks</a></li>
+        <li><a href="homeandfurniture.html" target="_blank">Home & Furniture</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Needy</h2>
+  <p>Learn more about who we are and what we do.</p>
+
+  <div class="accordion">
+    <button class="accordion-btn">Our Mission</button>
+    <div class="accordion-content">
+      <p>At Needy, our mission is to make shopping simple, fast, and affordable for everyone, anywhere.</p>
+    </div>
+
+    <button class="accordion-btn">Our Vision</button>
+    <div class="accordion-content">
+      <p>We aim to become one of the most trusted online marketplaces by connecting people to quality products easily.</p>
+    </div>
+
+    <button class="accordion-btn">Our Team</button>
+    <div class="accordion-content">
+      <p>Our team is made up of passionate developers, designers, and marketers dedicated to improving your shopping experience.</p>
+    </div>
+  </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Needy Shopping. All rights reserved.</p>
+  </footer>
+
+<script>
+  const buttons = document.querySelectorAll('.accordion-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+
+      // Close all other sections
+      document.querySelectorAll('.accordion-content').forEach(c => {
+        if (c !== content) c.classList.remove('show');
+      });
+
+      // Toggle this one
+      content.classList.toggle('show');
+    });
+  });
+</script>
+
+</body>
+</html>
